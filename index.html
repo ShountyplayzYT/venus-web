@@ -9,23 +9,26 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevents double scrollbars */
-            background-color: #0e1117; /* Matches Streamlit's dark mode background */
+            overflow: hidden;
+            background-color: #0e1117;
         }
         iframe {
             border: none;
             width: 100%;
             height: 100%;
+            background-color: #0e1117;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        iframe.loaded {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <!-- Replace the link below with your ACTUAL Streamlit Cloud URL -->
     <iframe
-    src="https://venuslogisticsplatform.streamlit.app/?embed=true"
-    width="100%"
-    height="100%"
-    frameborder="0">
-</iframe>
+        src="https://venuslogisticsplatform.streamlit.app/?embed=true&embed_options=disable_scrolling"
+        onload="this.classList.add('loaded')">
+    </iframe>
 </body>
 </html>
